@@ -44,7 +44,7 @@ function! s:enable_husk()
   cnoremap <expr> <M-b> husk#left()
   cnoremap <expr> <M-f> husk#right()
   cnoremap <expr> <M-#> "\<Home>\"\<CR>"
-  cnoremap <M-BS> <C-w>
+  cnoremap <expr> <M-BS> husk#bs_word()
 endfunction
 
 call <SID>enable_husk()
