@@ -44,7 +44,12 @@ function! s:enable_husk()
   cnoremap <expr> <M-b> husk#left()
   cnoremap <expr> <M-f> husk#right()
   cnoremap <expr> <M-#> "\<Home>\"\<CR>"
-  cnoremap <expr> <M-BS> husk#bs_word()
+  if has('nvim')
+    cnoremap <expr> <M-C-h> husk#bs_word()
+  else
+    cnoremap <expr> <M-BS> husk#bs_word()
+  endif
+
 endfunction
 
 call <SID>enable_husk()
